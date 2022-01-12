@@ -21,10 +21,6 @@ By the end of this tutorial you will be able to create a simple HTML front end w
 
    - Change to the Ropsten Tesnet and get a Copy an account's wallet public address
 
-<p align="middle">
-
-</p>
-
 2. **Request some Ropsten Tesnet Ether from a faucet loaded into your Metamask Wallet.**
 
    - [Faucet link to request funds](https://ipfs.io/ipfs/QmVAwVKys271P5EQyEfVSxm7BJDKWt42A2gHvNmxLjZMps/)
@@ -170,7 +166,7 @@ Back in your local text editor in `index.html`, add the following code to your h
         type="text/javascript">
  </script>
 
-<script
+<script>
   ////////////////////
   //ADD YOUR CODE HERE
   ////////////////////
@@ -200,6 +196,73 @@ var provider = new ethers.providers.Web3Provider(
   var MoodContractABI = <contract ABI>
   var MoodContract
   var signer
+```
+
+For the contract ABI, we want to specifically navigate to the [JSON Section](https://docs.soliditylang.org/en/develop/abi-spec.html#json). 
+We need to describe our smart contract in JSON format.
+
+Since we have two methods, this should start as an array, with 2 objects:
+
+```
+var MoodContractABI = [{}, {}]
+```
+
+From the above page, each object should have the following fields: `constant`, `inputs`, `name`, `outputs`, `payable`, `stateMutability` and `type`.
+
+For `setMood`, we describe each field below:
+- name: `setMood`, self explanatory
+- type: `function`, self explanatory
+- constant: should be `false` because this is a function that updates data
+- outputs: should be `[]` because this does not return anything
+- stateMutability: This is `nonpayable` because this function does not accept Ether
+- payable: 'false` since this does not accept Ether
+- inputs: this is an array of inputs to the function. Each object in the array should have `internalType`, `name` and `type`, and these are `string`, `_mood` and `string` respectively
+
+
+For `getMood`, we describe each field below:
+- name: `getMood`, self explanatory
+- type: `function`, self explanatory
+- constant: should be `true` because this is a function that retrieves data. Even though this is a function, it is basically a getter
+- outputs: this has the same type as `inputs` in `setMood`. For `internalType`, `name` and `type`, this should be `string`, `""`, and `string` respectively
+- stateMutability: This is `view` because this is a view function
+- payable: 'false` since this does not accept Ether
+- inputs: this has no arguments so this should be `[]`
+
+Your end result should look like this:
+
+```
+var MoodContractABI = [
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getMood",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_mood",
+				"type": "string"
+			}
+		],
+		"name": "setMood",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]
 ```
 
 5. Connect the signer to your metamask account (we use `[0]` as the defalut), and define the contract object using your contract address, ABI, and signer.
