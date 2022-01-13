@@ -134,7 +134,7 @@ Now it is time to create a solidity smart contract.
    ```
 
    - And that's it! your code
-     like [this](https://github.com/BlockDevsUnited/BasicFrontEndTutorial/blob/master/contracts/mood.sol)
+     like [this](https://github.com/LearnWeb3DAO/BasicFrontEndTutorial/blob/master/contracts/mood.sol)
 
 6. Deploy the contract on the Ropsten Testnet.
    - Make sure your Metamask is connected to the Ropsten Testnet.
