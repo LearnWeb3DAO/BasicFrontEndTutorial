@@ -91,9 +91,9 @@ We will create an app that simply reads and writes a value to the blockchain. We
 
 Now it is time to create a solidity smart contract.
 
-1. You can use any editor you like to make the contract. For this tutorial we recommend the online IDE [remix.ethereum.org]
+1. You can use any editor you like to make the contract. For this tutorial we recommend the online IDE [https://remix.ethereum.org]
    - Never used remix before? Checkout [This video](https://www.youtube.com/watch?v=pdJttvcAV1c)
-2. Go to remix.ethereum.org
+2. Go to https://remix.ethereum.org
 3. Check out the "Solidity Compiler", and "Deploy and Run Transactions" tabs. If they are not present, enable them in the plugin manager
 4. Create a new solidity file in remix, named `mood.sol`
 5. Write the contract
@@ -133,8 +133,7 @@ Now it is time to create a solidity smart contract.
     }
    ```
 
-   - And that's it! your code
-     like [this](https://github.com/BlockDevsUnited/BasicFrontEndTutorial/blob/master/contracts/mood.sol)
+   - And that's it! Your code should look like [this]. (https://github.com/BlockDevsUnited/BasicFrontEndTutorial/blob/master/contracts/mood.sol)
 
 6. Deploy the contract on the Ropsten Testnet.
    - Make sure your Metamask is connected to the Ropsten Testnet.
@@ -265,7 +264,7 @@ var MoodContractABI = [
 ]
 ```
 
-5. Connect the signer to your metamask account (we use `[0]` as the defalut), and define the contract object using your contract address, ABI, and signer.
+5. Connect the signer to your metamask account (we use `[0]` as the default), and define the contract object using your contract address, ABI, and signer.
 
 ```javascript
 provider.listAccounts().then(function (accounts) {
