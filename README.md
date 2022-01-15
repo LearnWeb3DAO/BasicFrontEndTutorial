@@ -21,9 +21,10 @@ By the end of this tutorial you will be able to create a simple HTML front end w
 
    - Change to the Ropsten Tesnet and get a Copy an account's wallet public address
 
-2. **Request some Rinkeby Tesnet Ether from a faucet loaded into your Metamask Wallet.**
+2. **Request some Rinkeby/Ropsten Tesnet Ether from a faucet loaded into your Metamask Wallet.**
 
-   - [Faucet link to request funds](https://faucet.rinkeby.io/)
+   - [Faucet link to request Ropsten testnet Ethers](https://ipfs.io/ipfs/QmU7Ecw419si7D8gq4tB3qVBraitBGeVrsMESHBMD1DnCb/). If that doesn't work, [click here to get ethers](https://faucet.ropsten.be/)
+   - [Faucet link to request Rinkeby testnet Ethers](https://faucet.rinkeby.io/). If that doesn't work, [click here to get ethers](https://faucets.chain.link/rinkeby)
    - [Blog explaining a faucet and how to use one](https://blog.b9lab.com/when-we-first-built-our-faucet-we-deployed-it-on-the-morden-testnet-70bfbf4e317e)
 
 3. **Install a http server. Use any you like, but we recommend `lite-server` for beginners:**
