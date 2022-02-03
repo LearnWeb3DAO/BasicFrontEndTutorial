@@ -23,7 +23,7 @@ If you would rather learn from a video, we have a recording available of this tu
 
      _The important bits for us are: `1:06 to 4:14`_
 
-   - Click Ethereum Mainnet in the top. Change to the Ropsten Tesnet and get a Copy an account's wallet public address
+   - Click Ethereum Mainnet in the top. Change to the Ropsten Tesnet and get a copy of the account's public address on your Metamask Wallet.
 
 2. **Request some Ropsten Tesnet Ether from a faucet loaded into your Metamask Wallet.**
    - [Faucet link to request funds](https://faucet.egorfine.com/)
@@ -102,7 +102,7 @@ Now it is time to create a solidity smart contract.
 4. Create a new solidity file in remix, named `mood.sol`
 5. Write the contract
 
-   - Specify the solidity version and add a lisence
+   - Specify the solidity version and add a license
 
    ```
    // SPDX-License-Identifier: MIT
@@ -339,4 +339,4 @@ lite-server
 
 - The ABI is also in [this file](https://github.com/BlockDevsUnited/BasicFrontEndTutorial/blob/master/Mood_ABI.json)
 
-#### This illustrates an important point: you can also build a dApp _without needing to write the Ethereum contract yourself_! If you want to use an existing contract written and already on Ethereum!
+#### This illustrates an important point: you can also build a dApp _without needing to write the Ethereum contract yourself_! If you want to use an existing contract written and already on Ethereum, you can!
