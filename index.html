@@ -46,8 +46,8 @@
   </div>
 
   <script>
-    window.ethereum.enable()
-    var provider = new ethers.providers.Web3Provider(web3.currentProvider, 'ropsten');
+   window.eth_requestAccounts;
+    var provider = new ethers.providers.Web3Provider(window.ethereum, 'ropsten');
 
     var MoodContractAddress = "0xF09d9bAc28E94A03BD66D943Cfc950484A8B9759";
     let MoodContractABI = [
