@@ -58,7 +58,9 @@ The first step is to create a basic html page.
 </html>
 ```
 
-We will create an app that simply reads and writes a value to the blockchain. We will need a label, an input, and buttons. 6. Inside the body tag, add some text, a label and input.
+We will create an app that simply reads and writes a value to the blockchain. We will need a label, an input, and buttons. 
+
+6. Inside the body tag, add some text, a label and input.
 
 ```html
 <body>
