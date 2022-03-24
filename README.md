@@ -47,7 +47,7 @@ If you would rather learn from a video, we have a recording available of this tu
 
 ### Create and Serve a Simple Webpage
 
-The first step is to create a basic html page.
+The first step is to create a basic HTML page.
 
 1.  Create a new folder (directory) in your terminal using `mkdir <directory name>`
 2.  In a code editor (e.g. Atom, or Visual Studio Code), open the folder
