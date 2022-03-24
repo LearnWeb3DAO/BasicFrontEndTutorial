@@ -127,10 +127,10 @@ OPTIONAL: Inside the `<head>` tag, add some styles to make it look nicer
 
 ### Create a Basic Smart Contract
 
-Now it is time to create a solidity smart contract.
+Now it's time to create a Solidity smart contract.
 
 1. You can use any editor you like to make the contract. For this tutorial we recommend the online IDE [Remix](https://remix.ethereum.org)
-   - Never used remix before? Checkout [This video](https://www.youtube.com/watch?v=pdJttvcAV1c)
+   - Never used Remix before? Checkout [This video](https://www.youtube.com/watch?v=pdJttvcAV1c)
 2. Go to [Remix](https://remix.ethereum.org)
 3. Check out the "Solidity Compiler", and "Deploy and Run Transactions" tabs. If they are not present, enable them in the plugin manager
 4. Create a new solidity file in remix, named `mood.sol`
