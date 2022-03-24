@@ -1,15 +1,15 @@
-# Level 7 - Create An Ethereum Dapp with Ethersjs
+# Level 7 - Create An Ethereum Dapp with Ethers.js
 
 ### (Forked from [BlockDevsUnited/BasicFrontEndTutorial](https://github.com/BlockDevsUnited/BasicFrontEndTutorial))
 
 This is a step-by-step tutorial on how to create a front end, deploy a Solidity smart contract, and connect them together.
-We will use [Metamask](https://metamask.io), [Remix IDE](https://remix.ethereum.org) and [Ethersjs](https://github.com/ethers-io/ethers.js/).
+We will use [Metamask](https://metamask.io), [Remix IDE](https://remix.ethereum.org) and [Ethers.js](https://github.com/ethers-io/ethers.js/).
 
 By the end of this tutorial you will be able to create a simple HTML front end with buttons that can interact with smart contract functions. The tutorial takes place in 3 stages
 
-- Create a basic html web page
-- Create a basic solidity smart contract
-- Connect the web page with the smart contracts using Ethersjs.
+- Create a basic HTML web page
+- Create a basic Solidity smart contract
+- Connect the web page with the smart contracts using Ethers.js.
 
 ---
 
@@ -36,7 +36,7 @@ If you would rather learn from a video, we have a recording available of this tu
 
 3. **Install a http server. Use any you like, but we recommend `lite-server` for beginners:**
 
-   - Install Node JS ([Download and Instructions](https://nodejs.org/en/download/))
+   - Install Node.js ([Download and Instructions](https://nodejs.org/en/download/))
    - Install lite-server (with NPM in a terminal/command prompt):
 
    ```bash
@@ -195,7 +195,7 @@ Make a new temporary file to hold:
 
 Back in your local text editor in `index.html`, add the following code to your html page:
 
-1. Import the Ethersjs source into your `index.html` page inside a new set of script tags:
+1. Import the Ethers.js source into your `index.html` page inside a new set of script tags:
 
 ```html
 <script
