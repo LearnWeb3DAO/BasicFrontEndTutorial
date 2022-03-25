@@ -211,21 +211,7 @@ Back in your local text editor in `index.html`, add the following code to your h
 </script>
 ```
 
-2. Inside a new script tag define an ethers provider. In our case it is Ropsten:
-
-```javascript
-var provider = new ethers.providers.Web3Provider(window.provider, "ropsten");
-```
-
-3. Request access to the user's wallet. The rest of the code we write will be put inside of the callback function.
-
-```javascript
-provider.send("eth_requestAccounts", []).then(() => {
-  // the rest of the code will be written here
-});
-```
-
-4. Import the contract ABI ([what is that?](https://solidity.readthedocs.io/en/develop/abi-spec.html)) and specify the contract address on our provider's blockchain:
+2. Inside the script tag, import the contract ABI ([what is that?](https://solidity.readthedocs.io/en/develop/abi-spec.html)) and specify the contract address on our provider's blockchain:
 
 ```javascript
   const MoodContractAddress = "<contract address>";
@@ -302,20 +288,28 @@ const MoodContractABI = [
 ]
 ```
 
-5. Connect the signer to your metamask account (we use `[0]` as the default), and define the contract object using your contract address, ABI, and signer.
+3. Next, Define an ethers provider. In our case it is Ropsten:
 
 ```javascript
-provider.listAccounts().then(function (accounts) {
-  signer = provider.getSigner(accounts[0]);
-  MoodContract = new ethers.Contract(
-    MoodContractAddress,
-    MoodContractABI,
-    signer
-  );
+const provider = new ethers.providers.Web3Provider(window.provider, "ropsten");
+```
+
+4. Request access to the user's wallet and connect the signer to your metamask account (we use `[0]` as the default), and define the contract object using your contract address, ABI, and signer
+
+```javascript
+provider.send("eth_requestAccounts", []).then(() => {
+  provider.listAccounts().then((accounts) => {
+    signer = provider.getSigner(accounts[0]);
+    MoodContract = new ethers.Contract(
+      MoodContractAddress,
+      MoodContractABI,
+      signer
+    );
+  });
 });
 ```
 
-6. Create asynchronous functions to call your smart contract functions
+5. Create asynchronous functions to call your smart contract functions
 
 ```javascript
 async function getMood() {
@@ -331,11 +325,11 @@ async function setMood() {
 }
 ```
 
-7. Connect your functions to your html buttons
+6. Connect your functions to your html buttons
 
 ```html
-<button onclick="getMood()">get Mood</button>
-<button onclick="setMood()">set Mood</button>
+<button onclick="getMood()">Get Mood</button>
+<button onclick="setMood()">Set Mood</button>
 ```
 
 ---

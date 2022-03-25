@@ -43,8 +43,8 @@
       window.ethereum,
       "ropsten"
     );
-    provider.send("eth_requestAccounts", []).then(() => {
-      const MoodContractAddress = "";
+
+    const MoodContractAddress = "0x17E3cc2cf5c2b8f063d7b2de8Fa53ABde884Ff77";
       const MoodContractABI = [
         {
           "inputs": [
@@ -74,9 +74,10 @@
         }
       ];
 
-      let moodContract;
-      let signer;
+    let MoodContract;
+    let signer;
 
+    provider.send("eth_requestAccounts", []).then(() => {
       provider.listAccounts().then(function (accounts) {
         signer = provider.getSigner(accounts[0]);
         MoodContract = new ethers.Contract(
@@ -85,8 +86,9 @@
           signer
         );
       });
+    });
 
-      async function getMood() {
+    async function getMood() {
         const getMoodPromise = MoodContract.getMood();
         const Mood = await getMoodPromise;
         console.log(Mood);
@@ -97,8 +99,6 @@
         const setMoodPromise = MoodContract.setMood(mood);
         await setMoodPromise;
       }
-    });
-
     
 
   </script>
