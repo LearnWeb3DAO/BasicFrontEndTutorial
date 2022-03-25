@@ -217,10 +217,12 @@ Back in your local text editor in `index.html`, add the following code to your h
 var provider = new ethers.providers.Web3Provider(window.provider, "ropsten");
 ```
 
-3. Request access to the user's wallet
+3. Request access to the user's wallet. The rest of the code we write will be put inside of the callback function.
 
 ```javascript
-(async () => await provider.send("eth_requestAccounts", []))();
+provider.send("eth_requestAccounts", []).then(() => {
+  // the rest of the code will be written here
+});
 ```
 
 4. Import the contract ABI ([what is that?](https://solidity.readthedocs.io/en/develop/abi-spec.html)) and specify the contract address on our provider's blockchain:
