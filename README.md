@@ -234,20 +234,16 @@ For `setMood`, we describe each field below:
 
 - name: `setMood`, self explanatory
 - type: `function`, self explanatory
-- constant: should be `false` because this is a function that updates data
 - outputs: should be `[]` because this does not return anything
 - stateMutability: This is `nonpayable` because this function does not accept Ether
-- payable: 'false` since this does not accept Ether
 - inputs: this is an array of inputs to the function. Each object in the array should have `internalType`, `name` and `type`, and these are `string`, `_mood` and `string` respectively
 
 For `getMood`, we describe each field below:
 
 - name: `getMood`, self explanatory
 - type: `function`, self explanatory
-- constant: should be `true` because this is a function that retrieves data. Even though this is a function, it is basically a getter
 - outputs: this has the same type as `inputs` in `setMood`. For `internalType`, `name` and `type`, this should be `string`, `""`, and `string` respectively
 - stateMutability: This is `view` because this is a view function
-- payable: 'false` since this does not accept Ether
 - inputs: this has no arguments so this should be `[]`
 
 Your end result should look like this:
@@ -255,7 +251,6 @@ Your end result should look like this:
 ```
 const MoodContractABI = [
 	{
-		"constant": true,
 		"inputs": [],
 		"name": "getMood",
 		"outputs": [
@@ -265,12 +260,10 @@ const MoodContractABI = [
 				"type": "string"
 			}
 		],
-		"payable": false,
 		"stateMutability": "view",
 		"type": "function"
 	},
 	{
-		"constant": false,
 		"inputs": [
 			{
 				"internalType": "string",
@@ -280,7 +273,6 @@ const MoodContractABI = [
 		],
 		"name": "setMood",
 		"outputs": [],
-		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function"
 	}
